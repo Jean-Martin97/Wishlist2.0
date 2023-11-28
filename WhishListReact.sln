@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhishListReact.Server", "WhishListReact.Server\WhishListReact.Server.csproj", "{E8F7305F-64FD-4CA6-90E7-ED85B1240D57}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "whishlistreact.client", "whishlistreact.client\whishlistreact.client.esproj", "{E8962E7D-53B1-4B66-A77F-DA1E3885C3EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E8F7305F-64FD-4CA6-90E7-ED85B1240D57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8F7305F-64FD-4CA6-90E7-ED85B1240D57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8F7305F-64FD-4CA6-90E7-ED85B1240D57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8F7305F-64FD-4CA6-90E7-ED85B1240D57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8962E7D-53B1-4B66-A77F-DA1E3885C3EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8962E7D-53B1-4B66-A77F-DA1E3885C3EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8962E7D-53B1-4B66-A77F-DA1E3885C3EA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E8962E7D-53B1-4B66-A77F-DA1E3885C3EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8962E7D-53B1-4B66-A77F-DA1E3885C3EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8962E7D-53B1-4B66-A77F-DA1E3885C3EA}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BC4AA741-E954-4DB5-AE51-570EFE6480A3}
+	EndGlobalSection
+EndGlobal

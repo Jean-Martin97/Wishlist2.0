@@ -1,0 +1,6 @@
+@WhishListReact.Server_HostAddress = http://localhost:5252
+
+GET {{WhishListReact.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
