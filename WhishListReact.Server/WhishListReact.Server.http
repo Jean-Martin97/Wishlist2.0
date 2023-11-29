@@ -4,3 +4,8 @@ GET {{WhishListReact.Server_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+GET {{WhishListReact.Server_HostAddress}}/item/
+Accept: application/json
+
+###

@@ -18,7 +18,7 @@ export class FilterableProductTable extends React.Component {
 
     render() {
         const { products } = this.props;
-        return <React.Fragment>
+        return products === undefined ? <p>Loading...</p> : <React.Fragment>
             <SearchBar
                 activeSort={this.state.activeSort}
                 onActiveSortChange={this.handelActiveSortChange} />

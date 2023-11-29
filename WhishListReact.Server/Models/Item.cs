@@ -1,5 +1,7 @@
-﻿using System.Text.Json.Serialization;
+﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace WhishListReact.Server.Models
 {
@@ -14,14 +16,22 @@ namespace WhishListReact.Server.Models
     {
         [BsonId]
         [BsonIgnoreIfDefault]
-        [JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
         public int Id { get; set; }
+        [JsonProperty("name")]
         public string Name { get; set; }
+        [JsonProperty("category")]
         public string Category { get; set; }
+        [JsonProperty("price")]
         public string? Price { get; set; }
-        public float Rate { get; set; } = 0;
+        [JsonProperty("rate")]
+        public float Rate { get; set; }
+        [JsonProperty("link")]
         public string? Link { get; set; }
-        public StatusEnum Status { get; set; } = StatusEnum.Wanted;
+        [JsonProperty("status")]
+        [JsonConverter(typeof(StringEnumConverter))] 
+        [BsonRepresentation(BsonType.String)] 
+        public StatusEnum? Status { get; set; } = StatusEnum.Wanted;
 
         //Need a default constructor for JSON conversion 
         public Item()
@@ -46,6 +56,15 @@ namespace WhishListReact.Server.Models
             Rate = rate;
             Link = link;
             Status = status;
+        }
+
+        public Item(string name, string category, string price, float rate, string link)
+        { 
+            Name = name;
+            Category = category;
+            Price = price;
+            Rate = rate;
+            Link = link;
         }
 
         public Item(string name, string category, string price, float rate, StatusEnum status)

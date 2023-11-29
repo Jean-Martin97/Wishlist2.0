@@ -28,6 +28,17 @@ namespace WhishListReact.Server.Services
             return _itemCount;
         }
 
+        public async Task<int> AddItemAsync(List<Item> items)
+        {
+            foreach (var item in items)
+            {
+                item.Id = ++_itemCount;
+            }
+
+            await _dbService.InsertManyRecordAsync(items);
+            return _itemCount;
+        }
+
         public async Task<List<Item>> GetItems(Expression<Func<Item, bool>>? filter = null)
         {
             return await _dbService.GetRecordsAsync<Item>(filter);

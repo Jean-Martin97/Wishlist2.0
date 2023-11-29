@@ -6,6 +6,7 @@ export function ProductTable({ products, activeSort }) {
     let lastCategory = null;
 
     if (activeSort.indexOf("Categorie") >= 0) {
+        console.log(products)
         const sorted = products.sort((a, b) => a.category.toLowerCase() > b.category.toLowerCase() ? 1 : -1
         );
         products = sorted;
