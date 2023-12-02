@@ -28,6 +28,8 @@ namespace WhishListReact.Server.Models
         public float Rate { get; set; }
         [JsonProperty("link")]
         public string? Link { get; set; }
+        [JsonProperty("image")]
+        public string? Image { get; set; }
         [JsonProperty("status")]
         [JsonConverter(typeof(StringEnumConverter))] 
         [BsonRepresentation(BsonType.String)] 
@@ -36,6 +38,29 @@ namespace WhishListReact.Server.Models
         //Need a default constructor for JSON conversion 
         public Item()
         { }
+
+        public Item(int id, string name, string category, string? price, float rate, string? link, string? image, StatusEnum? status)
+        {
+            Id = id;
+            Name = name;
+            Category = category;
+            Price = price;
+            Rate = rate;
+            Link = link;
+            Image = image;
+            Status = status;
+        }
+
+        public Item(string name, string category, string? price, float rate, string? link, string? image, StatusEnum? status)
+        {
+            Name = name;
+            Category = category;
+            Price = price;
+            Rate = rate;
+            Link = link;
+            Image = image;
+            Status = status;
+        }
 
         public Item(int id, string name, string category, string price, float rate, string link, StatusEnum status)
         {

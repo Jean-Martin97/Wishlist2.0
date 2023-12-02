@@ -127,3 +127,15 @@ button.close {
   content: "\f005 \f005 \f005 \f005 \f005";
   color: #f8ce0b;
 }
+
+.productTable {
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: center;
+  justify-content: space-evenly;
+  align-content: space-around;
+}
+
+.card {
+  margin-bottom: 20px;
+}

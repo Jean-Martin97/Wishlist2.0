@@ -1,12 +1,11 @@
 import React from 'react';
 import { ProductRow } from './ProductRow';
+import { ProductCard } from './ProductCard';
 
 export function ProductTable({ products, activeSort }) {
     const rows= [];
-    let lastCategory = null;
 
     if (activeSort.indexOf("Categorie") >= 0) {
-        console.log(products)
         const sorted = products.sort((a, b) => a.category.toLowerCase() > b.category.toLowerCase() ? 1 : -1
         );
         products = sorted;
@@ -43,21 +42,12 @@ export function ProductTable({ products, activeSort }) {
     }
 
     products.forEach(product => {
-        rows.push(<ProductRow key={product.name} products={product} />);
+        rows.push(<ProductCard key={product.name} product={product} />);
     });
 
-    return <table className="table">
-        <thead className="main-thead">
-            <tr>
-                <th className="col-4" style={{ borderRadius: "15px 0 0 0", minWidth: "120px" }}>Catégorie</th>
-                <th className="col-4" style={{ minWidth: "190px" }}>Nom</th>
-                <th>Prix</th>
-                <th className="col-5" style={{ minWidth: "185px" }}>Note</th>
-                <th className="col-1" style={{ borderRadius: "0 15px 0 0", maxWidth: "90px" }}>link</th>
-            </tr>
-        </thead>
-        <tbody>
+    return (
+        <div className="productTable">
             {rows}
-        </tbody>
-    </table>;
+        </div>
+    )
 }
